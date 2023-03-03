@@ -1,0 +1,757 @@
+@font-face {
+    font-family: autobusbold;
+    src: url(./font/autobus-bold/Autobusbold-1ynL.ttf);
+}
+@font-face {
+    font-family: hugecrack;
+    src: url(./font/huge-crack/HugeCrack-X3zJg.otf);
+}
+@font-face {
+    font-family: krunch;
+    src: url(./font/krunch/KrunchBold-OKn6.ttf);
+}
+
+
+/* 
+font-family: 'Climate Crisis', cursive;
+font-family: 'Gajraj One', cursive;
+font-family: 'Rubik Iso', cursive;
+font-family: 'Tilt Neon', cursive;
+*/
+
+/* 
+color pallate :
+- #FFC222 (oranye)
+- #1f1f1f (black)
+- #ccc (white)
+*/
+
+body {
+    background-color: #ddd;
+    margin: 0;
+    font-family: verdana;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    left: 0;
+    right:0px;
+}
+
+
+/* navbar */
+.nav {
+    background-color: #1f1f1f;
+    display: inline-block;
+    margin: 0px;
+    padding: 15px;
+    right: 100px;
+    left: 0;
+    top:0;
+    height: 30px;
+    position: fixed;
+    border-bottom: 12px double #ccc;
+    background-image: url(./pattern/denim.png);
+    z-index: 9999;
+    border-bottom-right-radius: 50px;
+}
+.menu {
+    display: flex;
+    justify-content: right;
+    margin-left: 150px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.nav .menu li {
+    display: inline;
+    border-right: 4px dotted #777;
+    padding: 2px 10px 5px;
+    font-family: arial;
+    font-size: 15px;
+    font-weight: 600;
+}
+.nav .menu li:nth-child(8) {
+    border-right: 0 solid red;
+}
+.nav .menu li a:hover {
+    color: #ffc222;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+.nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-family: Phudu;
+}
+.nav .logo {
+    width: 80px;
+    margin-bottom: -12px;
+    margin-left: 30px;
+    position: absolute;
+    animation: muncul 4s ease-out 2.5s; 
+    top: 20px;
+    left:10px;
+    border: 10px solid #666;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 10px 0px 10px #ccc;
+    filter: invert(.2);
+}
+@keyframes muncul {
+    0% {
+        left: -150px;
+    }
+    50% {
+        left: 100px;
+    }
+    75% {
+        left:10px;
+        rotate: -15deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
+
+
+/* Hero */
+.hero {
+    /* background-image: url(./img/hero-1.jpg); */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    text-align: center;
+    margin-top: 30px auto;
+    position: relative;
+}
+.hero-image {
+    position: absolute;
+    right: 0;
+    left:0;
+    top: 0;
+    bottom: 0;
+    background-color: #1f1f1f;
+    overflow: hidden;
+    filter:brightness(80%) contrast(110%);
+    opacity: 1;
+    /* z-index:3; */
+    /* mix-blend-mode: multiply; */
+}
+.hero .slide-1 {
+    z-index:4;
+}
+.hero .slide-2 {
+    z-index:3;
+    transition: 2s;
+}
+.hero .slide-3 {
+    z-index:2;
+    transition: 1s;
+}
+.hero .slide-2:target {
+    z-index: 5;
+}
+.hero .slide-3:target {
+    z-index: 5;
+}
+.hero .slider {
+    height: 30px;
+}
+.hero .slider a {
+    font-size: 100px;
+    text-decoration: none;
+    font-weight: 900;
+}
+.hero .slider a:hover {
+    color:purple;
+}
+.hero-image img {
+    width: 100%;
+    opacity: 0.9;
+}
+.hero-card {
+    width: 600px;
+    position:relative;
+    z-index: 10;
+}
+.hero .hero-card h1 {
+    font-size: 50px;
+    font-family: 'Tilt Neon', cursive;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 3px #1f1f1f;
+    color: #eee;
+}
+
+.hero .hero-card span {
+    color: #FFC222;
+}
+
+.hero .hero-card p {
+    font-family: 'Roboto Slab', cursive;
+    font-size: 18px;
+    color: #eee;
+    text-shadow: 1px 1px 1px #222;
+    font-weight: 300;
+}
+
+.hero .hero-card button {
+    padding: 9px;
+    border-radius: 10px;  
+    border: 3px dashed #ffc222;
+    font-family:'Gajraj One', cursive;
+    letter-spacing: 2px;
+    font-size: 20px;
+    box-shadow: 1px 1px 3px #1f1f1f;
+    font-weight: 600;
+    color: #ccc;
+    text-transform: uppercase;
+    background-color: #1f1f1f;
+    margin-top: 30px;
+    background-image: url(./pattern/denim.png);
+}
+.hero .hero-card button:hover {
+    animation: dugem .5s ease infinite alternate;
+}
+@keyframes dugem {
+    from {
+        color:#ccc;
+    }
+    to {
+        color: #ffc222;
+    }
+}
+.hero .arrow {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+    border: 9px dashed #1f1f1f;
+    margin-top: 150px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px #1f1f1f;
+    position: relative;
+    z-index: 10;
+}
+.hero .arrow:hover {
+    animation: berputar 1.5s ease-in infinite alternate;
+}
+.hero .arrow a {
+    color: #1f1f1f;
+    text-shadow: 3px 3px 1px #eee;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+    font-family: 'Rubik Iso', cursive;
+}
+@keyframes berputar {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1.2) rotate(360deg);
+    }
+}
+
+
+
+/* customer sectiion */
+.customer {
+    width: 1345px;
+    margin: 50px auto;
+}
+
+.customer .title {
+    padding: 30px 10px 5px;
+    width: 800px;
+    margin: 10px auto;
+    font-family: arial;
+}
+
+.customer h3 {
+    text-align: center;
+    font-family: 'Gajraj One', cursive;
+    font-size: 30px;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+    color: #111;
+    text-shadow: 1px 1px 1px white;
+    margin-bottom: 5px;
+}
+
+.customer p {
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Tilt Prism', cursive;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+.customer ul {
+    width: 1328px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #1f1f1f;
+    border: 6px double #ffc222;
+    color: white;
+    background-image: url(./pattern/denim.png);
+    padding: 30px 50px;
+}
+
+.customer ul li {
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+
+}
+.customer ul li img {
+    width: 150px;
+    filter: invert(.4);
+    margin-bottom: -35px;
+}
+.customer ul li h5 {
+    color: #aaa;
+    font-family: 'Tilt Prism', cursive;
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin: 30px auto 0px;
+}
+
+
+
+/* hire section */
+.hire {
+    margin: 100px 30px 30px;
+}
+.hire .title {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    margin: 30px auto;
+}
+.hire .title h3 {
+    font-family: 'Gajraj One', cursive;
+    font-size: 25px;
+    color: #111;
+    letter-spacing: 1px;;
+}
+.hire .title a {
+    text-decoration: none;
+    color: #ffc222;
+    font-family: 'Tilt Prism', cursive;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px #1f1f1f;
+    font-size: 28px;
+}
+
+.hire .card-box {
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+}
+
+.hire .card {
+    width: 300px;
+    background-image: url(img/hire-1.jpg);
+    background-size: cover;
+    background-color: #333;
+    box-shadow: 0px 5px 7px #1f1f1f;
+}
+.hire .card .card-text {
+    background-color: #999;
+    opacity: 0.7;
+    text-align: center;
+    padding: 3px 1px;
+    margin-top: 213px;
+}
+
+.hire .card p {
+    display: block;
+    padding: 2px auto;
+    font-weight: 800px;
+    font-family: 'Tilt Neon', cursive;
+}
+
+.hire .card-text .button {
+    background-color: black;
+}
+
+.hire .card-text .button button {
+    background-color: #ffc222;
+    font-weight: 600;
+    padding: 5px;
+    font-family: 'Phudu', cursive;
+    color: #111;
+}
+
+
+
+/* carriers section */
+.carriers {
+    margin: 150px auto;
+}
+.carriers .title {
+    text-align: center;
+}
+.carriers .title h3 {
+    font-family: 'Gajraj One', cursive;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.carriers .title p {
+    font-weight: 600;
+    color: #333;
+    font-family: 'Tilt Prism', cursive;
+    margin-top: 0;
+}
+.carriers .box {
+    width: 800px;
+    background-color: #ffc222;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    border: 4px solid #666;
+    padding: 10px 10px;
+}
+.carriers .box a img {
+    width: 150px;
+    padding: 15px 5px;
+    filter: invert(.6);
+    transition: 1s ease;
+}
+.carriers .box a:hover img {
+    transform: scale(2);
+}
+
+
+
+/* delivery */
+.delivery .title {
+    display: flex;
+    justify-content:space-between;
+}
+.delivery .title h3 {
+    font-family: 'Gajraj One', cursive;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #111;
+    margin-top: 0px;
+}
+.delivery .title a {
+    color:#ffc222;
+    background-color: #999;
+    padding: 0px 10px;
+    font-size: 28px;
+    font-family: 'Tilt Prism', cursive;
+    text-shadow: 1px 1px 1px#111;
+    font-weight: 600;
+    
+}
+.delivery .box {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #1f1f1f;
+    background-image: url(./pattern/denim.png);
+    border: 5px dashed #ffc222;
+}
+.delivery .box ul {
+    color: #ccc;
+    padding: 30px 30px;
+    border-left: 1px solid #eee;
+    font-weight: bold;
+}
+
+
+
+/* driver */
+.driver {
+    margin: 100px auto;
+}
+.driver .title {
+    width: 800px;
+    text-align: center;
+    font-family: 'Gajraj One', cursive;
+    font-size: 30px;
+}
+.driver .box {
+    display: flex;
+    justify-content: center;
+}
+.driver .card {
+    background-color: yellowgreen;
+    border: 1px solid#333;
+    background: linear-gradient(red, #ffc222);
+    margin: 0 3px;
+    font-family: 'Tilt Neon', cursive;
+}
+.driver .card img {
+    width: 180px;
+}
+.driver .card p {
+    font-weight: 600;
+    text-align: center;
+    color: #222;
+    border-bottom: 1px solid black;
+}
+.driver .card .card-button {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    opacity: 0.7;
+}
+.driver .card .card-button button {
+    font-family: 'Phudu', cursive;
+    color: #111;
+    font-weight: 600;
+}
+
+
+/* insurance */
+.insurance {
+    margin: 150px auto;
+}
+.insurance .title {
+    margin: 50px auto 5px;
+    background-color: #666;
+    text-align: center;
+    color: #ccc;
+    background-image: url(./pattern/denim.png);
+    font-family: 'Tilt Neon', cursive;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    text-transform: uppercase;
+}
+.insurance .link {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Tilt Prism';
+}
+.insurance .link a {
+    font-weight: 700;
+    text-align: right;
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .07);
+    font-size: 30px;
+}
+.insurance .box {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 30px;
+    background-image: radial-gradient(red 5%, #ffc222 70%);
+    border-right:100px double #666;
+    border-left: 100px double #666;
+}
+.insurance .box img {
+    width: 180px;
+    filter: invert(.3);
+}
+.insurance .box img:hover {
+    animation: 1s ease infinite berdering alternate;
+}
+@keyframes berdering {
+    0% {
+        rotate: 0deg;
+        transform: scale(1);
+    }
+    50% {
+        rotate: 45deg;
+        transform: scale(1.5);
+    }
+    75% {
+        rotate: 0deg;
+        transform: scale(1);
+    }
+    100% {
+        rotate: -45deg;
+        transform: scale(1.5);
+    }
+}
+
+
+/* auctions */
+.auctions {
+    margin: 50px auto;
+}
+.auctions .title {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Gajraj One';
+    font-size: 25px;
+    color: #FFC222;
+    text-shadow: 1px 1px 1px #111;
+    letter-spacing: 1px;
+}
+.auctions .box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 0;
+    left: 0;
+    background-color: #FFC222;
+}
+
+
+/* training */
+.training .title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Gajraj One';
+    font-size: 30px;
+    color: #666;
+}
+.training .box {
+    display: flex;
+    justify-content: space-evenly;
+    width: 800px;
+    background-color: #333;
+    margin: 30px auto;
+}
+.training .box .card {
+    height: 450px;
+    width: 400px;
+    text-align: center;
+    border: 3px solid black;
+    padding-top: 100px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+.training .box .kiri {
+    background: radial-gradient(#eee, #ffc222);
+}
+.training .box .kanan {
+    background: radial-gradient(#eee, red);
+}
+.training .box .card img {
+    width: 200px;
+    filter: invert(.3);
+}
+.training .box .card h5 {
+    font-family: 'Rubik Iso';
+    font-size: 40px;
+    color: #666;
+    margin: 0 auto;
+}
+.training .box .card button {
+    background-color: #666;
+    font-family: Phudu;
+    color: #ccc;
+    font-weight: 600;
+}
+
+
+/* product */
+.product {
+    margin: 100px auto;
+}
+.product .title {
+    font-family: 'Gajraj One';
+    color: #eee;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .9);
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+.product .box {
+    display: flex;
+    justify-content: center;
+}
+.product .box .item {
+    width: 300px;
+    height: 100px;
+    background-color: #333;
+    border: 1px solid white;
+    text-align: center;
+    line-height: 100px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+    background-image: radial-gradient(#aaa 5%, #333 80%);
+}
+.product .box .item a {
+    color: #ccc;
+    text-decoration: none;
+    font-family: 'Climate Crisis';
+    letter-spacing: 1px;
+}
+
+
+/* footer */
+footer {
+    color: #eee;
+    background-color: black;
+    display: flex;
+    background-image: url(./pattern/denim.png);
+    position: relative;
+    padding: 0px 25px;
+    font-family: Phudu;
+}
+footer h2 {
+    color: #ccc;
+    font-family: 'tilt Neon';
+    font-size: 38px;
+    margin-top: 10px;
+}
+footer .medsos {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    width: 500px;
+    padding-top: 90px;
+    color: #1f1f1f;
+}
+footer .medsos li {
+    width: 40px;
+    overflow: hidden;
+}
+footer .medsos a {
+    filter:drop-shadow(1px 1px 2px #666) invert(.1);
+}
+footer ul li {
+    color: #ccc;
+}
+footer ul li img {
+    width:40px;
+}
+footer span {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-family: Phudu;
+    text-transform: uppercase;
+}
+footer span a {
+    color: #ffc222;
+    text-decoration: none;
+}
+
+
+
+/* Back to top */
+.back {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #ffc222;
+    filter:opacity(.7);
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 30px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border: 4px solid #1f1f1f;
+    text-decoration: none;
+    color: #1f1f1f;
+    font-family: 'Tilt Prism', cursive;
+}
